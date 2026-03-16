@@ -1,0 +1,316 @@
+{
+  "components": [
+    {
+      "number": 1,
+      "group": "UPPER",
+      "componentType": "Toe Top / Mudguard",
+      "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+      "color": "White",
+      "ref": "",
+      "supplier": "Nan-Ya"
+    },
+    {
+      "number": 2,
+      "group": "UPPER",
+      "componentType": "Vamp",
+      "componentSpecification": "MESH + 4MMKF329+24GT/C",
+      "color": "Yellow",
+      "ref": "",
+      "supplier": "Cosmo HK"
+    },
+    {
+      "number": 3,
+      "group": "UPPER",
+      "componentType": "Eyerow",
+      "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+      "color": "White",
+      "ref": "",
+      "supplier": "Nan-Ya"
+    },
+    {
+      "number": 4,
+      "group": "UPPER",
+      "componentType": "Tongue",
+      "componentSpecification": "Mesh tongue with padded backing",
+      "color": "Cool Grey",
+      "ref": "",
+      "supplier": "Cosmo HK"
+    },
+    {
+      "number": 5,
+      "group": "UPPER",
+      "componentType": "Tongue Logo",
+      "componentSpecification": "Tonal tongue patch branding",
+      "color": "Cool Grey",
+      "ref": "",
+      "supplier": "Local"
+    },
+    {
+      "number": 6,
+      "group": "UPPER",
+      "componentType": "Tongue Lining",
+      "componentSpecification": "Visa Terry + 4MMKF329+24GT/C",
+      "color": "Black",
+      "ref": "",
+      "supplier": "Local"
+    },
+    {
+      "number": 7,
+      "group": "UPPER",
+      "componentType": "Lace Eyelet",
+      "componentSpecification": "8mm Metal eyelet",
+      "color": "Gunmetal",
+      "ref": "",
+      "supplier": "Dae-Sung"
+    },
+    {
+      "number": 8,
+      "group": "UPPER",
+      "componentType": "Shoe Lace",
+      "componentSpecification": "8mm Oval",
+      "color": "Off-White",
+      "ref": "",
+      "supplier": "Pahio"
+    },
+    {
+      "number": 9,
+      "group": "UPPER",
+      "componentType": "Tongue Foam",
+      "componentSpecification": "20mm KFF PU foam",
+      "color": "Cool Grey",
+      "ref": "",
+      "supplier": "Local"
+    },
+    {
+      "number": 10,
+      "group": "UPPER",
+      "componentType": "Quarter",
+      "componentSpecification": "MESH + 4MMKF329+24GT/C",
+      "color": "Yellow",
+      "ref": "",
+      "supplier": "Cosmo HK"
+    },
+    {
+      "number": 11,
+      "group": "UPPER",
+      "componentType": "Heel Logo",
+      "componentSpecification": "Embroidery \"text\" logo",
+      "color": "White",
+      "ref": "",
+      "supplier": "Local"
+    },
+    {
+      "number": 12,
+      "group": "UPPER",
+      "componentType": "Collar Panel",
+      "componentSpecification": "MESH+4MMKF329+24GT/C",
+      "color": "Yellow",
+      "ref": "",
+      "supplier": "Cosmo HK"
+    },
+    {
+      "number": 13,
+      "group": "UPPER",
+      "componentType": "Heel Counter",
+      "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+      "color": "Charcoal Grey",
+      "ref": "",
+      "supplier": "Nan-Ya"
+    },
+    {
+      "number": 20,
+      "group": "OUTSOLE UNIT",
+      "componentType": "Heel Counter",
+      "componentSpecification": "Injection molded heel clip",
+      "color": "Grey",
+      "ref": "",
+      "supplier": "Xie-Xie Injection"
+    },
+    {
+      "number": 21,
+      "group": "OUTSOLE UNIT",
+      "componentType": "Midsole Wedge Top",
+      "componentSpecification": "Hot Press EVA Asker \"C\" 45-50",
+      "color": "Off-White",
+      "ref": "",
+      "supplier": "Local"
+    },
+    {
+      "number": 22,
+      "group": "OUTSOLE UNIT",
+      "componentType": "Midsole Wedge Bottom",
+      "componentSpecification": "Hot Press EVA Asker \"C\" 55-60",
+      "color": "Grey",
+      "ref": "",
+      "supplier": "Local"
+    },
+    {
+      "number": 23,
+      "group": "OUTSOLE UNIT",
+      "componentType": "Outsole",
+      "componentSpecification": "#1-44 NBS400 Shore \"A\" 65 +-or-3 SG 1.1 +1.4",
+      "color": "Black",
+      "ref": "",
+      "supplier": "CW Pressing"
+    }
+  ],
+  "images": [
+    {
+      "src": "/1.png",
+      "alt": "Quarter lateral view",
+      "label": "Quarter View",
+      "hotspots": [
+        { "number": 1, "top": "62.66%", "left": "62.75%" },
+        { "number": 2, "top": "51.42%", "left": "74.60%" },
+        { "number": 3, "top": "40.74%", "left": "49.94%" },
+        { "number": 10, "top": "56.20%", "left": "46.94%" },
+        { "number": 4, "top": "19.67%", "left": "43.94%" },
+        { "number": 6, "top": "28.94%", "left": "40.94%" },
+        { "number": 9, "top": "29.78%", "left": "35.88%" },
+        { "number": 7, "top": "39.62%", "left": "41.25%" },
+        { "number": 8, "top": "36.81%", "left": "60.06%" },
+        {
+          "number": 11,
+          "top": "46.92%",
+          "left": "40.94%",
+          "componentType": "Collar Underlay",
+          "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+          "color": "White",
+          "supplier": "Cosmo HK"
+        },
+        { "number": 12, "top": "45.52%", "left": "29.87%" },
+        { "number": 13, "top": "28.94%", "left": "21.65%" },
+        { "number": 20, "top": "52.26%", "left": "18.18%" },
+        { "number": 21, "top": "61.25%", "left": "21.02%" },
+        { "number": 22, "top": "72.77%", "left": "34.14%" },
+        { "number": 23, "top": "77.52%", "left": "20.86%" }
+      ]
+    },
+    {
+      "src": "/3.png",
+      "alt": "Rear heel view",
+      "label": "Rear View",
+      "hotspots": [
+        {
+          "number": 11,
+          "top": "37.93%",
+          "left": "48.52%",
+          "componentType": "Heel Logo",
+          "componentSpecification": "Embroidery \"text\" logo",
+          "color": "White",
+          "supplier": "Local"
+        },
+        { "number": 13, "top": "52.54%", "left": "48.36%" },
+        { "number": 20, "top": "65.19%", "left": "56.11%" },
+        { "number": 21, "top": "70.81%", "left": "42.36%" },
+        { "number": 22, "top": "76.43%", "left": "55.00%" },
+        { "number": 23, "top": "79.80%", "left": "43.46%" }
+      ]
+    },
+    {
+      "src": "/4.png",
+      "alt": "Top view",
+      "label": "Top View",
+      "hotspots": [
+        {
+          "number": 1,
+          "top": "82.33%",
+          "left": "48.21%",
+          "componentType": "Toe Top / Mudguard",
+          "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+          "color": "White"
+        },
+        {
+          "number": 2,
+          "top": "70.81%",
+          "left": "47.57%",
+          "componentType": "Vamp",
+          "componentSpecification": "MESH + 4MMKF329+24GT/C",
+          "color": "Yellow"
+        },
+        {
+          "number": 5,
+          "top": "72.49%",
+          "left": "52.95%",
+          "componentType": "Vamp Lining",
+          "componentSpecification": "Cambrelle",
+          "color": "Black"
+        },
+        {
+          "number": 10,
+          "top": "48.89%",
+          "left": "41.09%",
+          "componentType": "Quarter",
+          "componentSpecification": "MESH + 4MMKF329+24GT/C",
+          "color": "Yellow"
+        },
+        {
+          "number": 3,
+          "top": "48.89%",
+          "left": "53.11%",
+          "componentType": "Eyerow",
+          "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+          "color": "White"
+        },
+        {
+          "number": 8,
+          "top": "51.98%",
+          "left": "48.36%",
+          "componentType": "Shoe Lace",
+          "componentSpecification": "8mm Oval",
+          "color": "Off-White"
+        },
+        {
+          "number": 12,
+          "top": "27.26%",
+          "left": "42.99%",
+          "componentType": "Collar Panel",
+          "componentSpecification": "MESH+4MMKF329+24GT/C",
+          "color": "Yellow"
+        },
+        {
+          "number": 11,
+          "top": "19.67%",
+          "left": "47.10%",
+          "componentType": "Inner sole logo",
+          "componentSpecification": "Screen Print Logo \"Text\" 45mm x 25MM",
+          "color": "Red / Black"
+        }
+      ]
+    },
+    {
+      "src": "/5.png",
+      "alt": "Outsole view",
+      "label": "Bottom View",
+      "hotspots": [
+        {
+          "number": 1,
+          "top": "53%",
+          "left": "37%",
+          "group": "BOTTOM VIEW",
+          "componentType": "Midsole Carrier",
+          "componentSpecification": "Compression-molded EVA midsole carrier visible from the outsole view",
+          "color": "Off-White"
+        },
+        {
+          "number": 2,
+          "top": "49%",
+          "left": "50%",
+          "group": "BOTTOM VIEW",
+          "componentType": "Midfoot Rubber Insert",
+          "componentSpecification": "Textured rubber traction insert set into the center outsole for grip and wear resistance",
+          "color": "Black"
+        },
+        {
+          "number": 3,
+          "top": "50%",
+          "left": "60%",
+          "group": "BOTTOM VIEW",
+          "componentType": "Outsole",
+          "componentSpecification": "Full rubber lug outsole with molded perimeter traction and flex grooves",
+          "color": "Black"
+        }
+      ]
+    }
+  ]
+}

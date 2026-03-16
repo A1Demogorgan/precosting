@@ -1,0 +1,36 @@
+Component Group,Component,Material,Waste,Processing,Labour,Machine,Consumables,Bought-out / Vendor,Inbound Freight,Duty / Tariff,Quality Rejection,Row Total
+Upper,Toe overlay / mudguard,0.6,0.06,0.04,0.1,0.03,0.01,0.0,0.01,0.01,0.01,0.87
+Upper,Vamp,0.39,0.04,0.02,0.08,0.03,0.01,0.0,0.01,0.01,0.01,0.6
+Upper,Quarter panel – lateral,0.68,0.07,0.04,0.12,0.04,0.01,0.0,0.01,0.01,0.01,0.99
+Upper,Quarter panel – medial,0.65,0.06,0.04,0.11,0.04,0.01,0.0,0.01,0.01,0.01,0.94
+Upper,Eyestay / lace stay,0.34,0.03,0.02,0.07,0.02,0.01,0.0,0.01,0.01,0.01,0.52
+Upper,Side overlay / logo form,0.24,0.03,0.04,0.05,0.02,0.01,0.0,0.01,0.0,0.01,0.41
+Upper,Collar panel,0.28,0.03,0.02,0.06,0.02,0.01,0.0,0.01,0.0,0.01,0.44
+Upper,Heel overlay,0.27,0.03,0.02,0.06,0.02,0.01,0.0,0.01,0.0,0.01,0.43
+Upper,Tongue top,0.4,0.04,0.02,0.08,0.03,0.01,0.0,0.01,0.01,0.01,0.61
+Upper,Tongue lining,0.15,0.02,0.01,0.04,0.01,0.01,0.0,0.0,0.0,0.0,0.24
+Upper,Collar lining,0.2,0.02,0.01,0.05,0.02,0.01,0.0,0.0,0.0,0.01,0.32
+Upper,Foam padding – tongue & collar,0.18,0.02,0.01,0.04,0.01,0.01,0.0,0.0,0.0,0.0,0.27
+Upper,Toe puff,0.1,0.01,0.01,0.02,0.01,0.0,0.0,0.0,0.0,0.0,0.15
+Upper,Heel counter,0.14,0.01,0.01,0.03,0.01,0.0,0.0,0.0,0.0,0.0,0.2
+Closure,Laces,0.24,0.01,0.0,0.03,0.01,0.0,0.08,0.0,0.0,0.0,0.37
+Closure,Eyelets / top eyelet,0.08,0.0,0.01,0.01,0.01,0.0,0.02,0.0,0.0,0.0,0.13
+Closure,Aglets,0.02,0.0,0.0,0.0,0.0,0.0,0.01,0.0,0.0,0.0,0.03
+Branding / Trim,Tongue label,0.03,0.0,0.01,0.01,0.0,0.0,0.02,0.0,0.0,0.0,0.07
+Branding / Trim,Heel logo / branding patch,0.04,0.0,0.01,0.01,0.01,0.0,0.03,0.0,0.0,0.0,0.1
+Internal,Sockliner / footbed,0.52,0.04,0.02,0.06,0.02,0.01,0.05,0.01,0.01,0.01,0.75
+Internal,Strobel board / cloth,0.2,0.02,0.01,0.04,0.01,0.01,0.0,0.0,0.0,0.0,0.29
+Internal,Insole board / lasting board,0.16,0.01,0.01,0.03,0.01,0.0,0.0,0.0,0.0,0.0,0.22
+Bottom,Midsole wedge – top layer,1.28,0.1,0.11,0.15,0.08,0.02,0.06,0.03,0.04,0.03,1.9
+Bottom,Midsole wedge – bottom layer,1.02,0.08,0.09,0.13,0.06,0.02,0.05,0.02,0.03,0.02,1.52
+Bottom,Outsole,2.14,0.16,0.14,0.32,0.11,0.03,0.12,0.04,0.07,0.04,3.17
+Bottom,Heel wedge / stabilizer,0.26,0.02,0.02,0.04,0.02,0.01,0.02,0.01,0.01,0.0,0.41
+Consumables,Thread,0.06,0.0,0.0,0.0,0.0,0.02,0.0,0.0,0.0,0.0,0.08
+Consumables,Adhesives / cement / primer,0.18,0.02,0.0,0.03,0.01,0.09,0.0,0.0,0.0,0.01,0.34
+Packaging,Shoe box,0.49,0.02,0.0,0.03,0.01,0.01,0.09,0.01,0.01,0.01,0.68
+Packaging,Tissue / stuffing / tags / stickers,0.16,0.01,0.0,0.02,0.0,0.01,0.04,0.0,0.0,0.0,0.24
+Packaging,Master carton allocation,0.1,0.0,0.0,0.01,0.0,0.0,0.03,0.0,0.0,0.0,0.14
+Logistics & Import,Factory inland + export docs allocation,0.0,0.0,0.0,0.0,0.0,0.0,0.23,0.05,0.0,0.0,0.28
+Logistics & Import,International freight + insurance,0.0,0.0,0.0,0.0,0.0,0.0,0.21,0.16,0.0,0.0,0.37
+Logistics & Import,Import duty + customs + destination inland,0.0,0.0,0.0,0.0,0.0,0.0,0.05,0.02,0.34,0.0,0.41
+TOTAL,Whole Shoe,11.6,0.96,0.74,1.83,0.67,0.35,1.11,0.44,0.57,0.22,18.49

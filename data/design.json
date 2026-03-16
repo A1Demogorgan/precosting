@@ -1,0 +1,441 @@
+{
+  "designId": "MSK069",
+  "tables": [
+    {
+      "name": "designDetails",
+      "type": "keyValue",
+      "rows": [
+        {
+          "field": "Project Name",
+          "value": "Sneaker Factory Jogger"
+        },
+        {
+          "field": "Factory",
+          "value": "Houjie #1"
+        },
+        {
+          "field": "Prototype ID",
+          "value": "MSK069"
+        },
+        {
+          "field": "Season",
+          "value": "Spring 2018"
+        },
+        {
+          "field": "Division",
+          "value": "Running"
+        },
+        {
+          "field": "Color Description",
+          "value": "WHITE / GREY / BLACK"
+        },
+        {
+          "field": "Country of Origin",
+          "value": "China"
+        },
+        {
+          "field": "Construction",
+          "value": "Cold Cement Cement"
+        },
+        {
+          "field": "Gender/Size",
+          "value": "M'S9#"
+        },
+        {
+          "field": "SizeRun",
+          "value": "5-14"
+        },
+        {
+          "field": "Last Code",
+          "value": "SUX-6000"
+        },
+        {
+          "field": "O/S Code",
+          "value": "LF_204"
+        },
+        {
+          "field": "Status",
+          "value": "PHOTO"
+        }
+      ]
+    },
+    {
+      "name": "upperComponents",
+      "type": "grid",
+      "columns": [
+        "no",
+        "componentType",
+        "componentSpecification",
+        "color",
+        "ref",
+        "supplier",
+        "notes"
+      ],
+      "rows": [
+        {
+          "no": "1",
+          "componentType": "Toe Top / Mudguard",
+          "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+          "color": "White",
+          "ref": "",
+          "supplier": "Nan-Ya",
+          "notes": ""
+        },
+        {
+          "no": "2",
+          "componentType": "Vamp",
+          "componentSpecification": "MESH + 4MMKF329+24GT/C",
+          "color": "White",
+          "ref": "",
+          "supplier": "Cosmo HK",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Vamp Lining",
+          "componentSpecification": "Cambrelle",
+          "color": "Black",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "3",
+          "componentType": "Quarter/Eyerow",
+          "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+          "color": "White",
+          "ref": "",
+          "supplier": "Nan-Ya",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Quarter logo",
+          "componentSpecification": "TPR Logo Stiched on",
+          "color": "Red",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "4",
+          "componentType": "Tongue",
+          "componentSpecification": "MESH+4MMKF329+24GT/C",
+          "color": "Cool Grey 2 c",
+          "ref": "",
+          "supplier": "Cosmo HK",
+          "notes": ""
+        },
+        {
+          "no": "5",
+          "componentType": "Tongue Logo",
+          "componentSpecification": "Embroidery \"text\" logo",
+          "color": "White",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "6",
+          "componentType": "Tongue Lining",
+          "componentSpecification": "Visa Terry + 4MMKF329+24GT/C",
+          "color": "Black",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Tongue Foam",
+          "componentSpecification": "20mm KFF PU foam",
+          "color": "NA",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "7",
+          "componentType": "Lace Eyelet",
+          "componentSpecification": "8mm Steel",
+          "color": "Red",
+          "ref": "",
+          "supplier": "Dae-Sung",
+          "notes": ""
+        },
+        {
+          "no": "8",
+          "componentType": "Shoe Lace",
+          "componentSpecification": "8mm Oval",
+          "color": "Red",
+          "ref": "",
+          "supplier": "Pahio",
+          "notes": ""
+        },
+        {
+          "no": "9",
+          "componentType": "Collar Underlay",
+          "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+          "color": "White",
+          "ref": "",
+          "supplier": "Cosmo HK",
+          "notes": ""
+        },
+        {
+          "no": "10",
+          "componentType": "Collar Panel",
+          "componentSpecification": "MESH+4MMKF329+24GT/C",
+          "color": "White",
+          "ref": "",
+          "supplier": "Cosmo HK",
+          "notes": ""
+        },
+        {
+          "no": "11",
+          "componentType": "Heel Logo",
+          "componentSpecification": "Embroidery \"text\" logo",
+          "color": "White",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "12",
+          "componentType": "Heel Lining",
+          "componentSpecification": "Visa Terry + 4MMKF329+24GT/C",
+          "color": "NA",
+          "ref": "",
+          "supplier": "Cosmo HK",
+          "notes": ""
+        },
+        {
+          "no": "13",
+          "componentType": "Heel Counter",
+          "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+          "color": "NA",
+          "ref": "",
+          "supplier": "Nan-Ya",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Internal Heel Counter",
+          "componentSpecification": "Texon .4mm",
+          "color": "NA",
+          "ref": "",
+          "supplier": "Texon",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Internal Toe Puff",
+          "componentSpecification": "Texon .2mm",
+          "color": "NA",
+          "ref": "",
+          "supplier": "Texon",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Eyerow Reinforcement",
+          "componentSpecification": "Super Tuff",
+          "color": "NA",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Upper Thread",
+          "componentSpecification": "bonded nylon 6 250D 3 Ply",
+          "color": "Matching",
+          "ref": "",
+          "supplier": "Coats or A&E",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "name": "outsoleComponents",
+      "type": "grid",
+      "notes": "this is outsole",
+      "columns": [
+        "no",
+        "componentType",
+        "componentSpecification",
+        "color",
+        "ref",
+        "supplier",
+        "notes"
+      ],
+      "rows": [
+        {
+          "no": "20",
+          "componentType": "Heel Counter",
+          "componentSpecification": "Injection Plastic Red",
+          "color": "Red",
+          "ref": "",
+          "supplier": "Xie-Xie Injection",
+          "notes": ""
+        },
+        {
+          "no": "21",
+          "componentType": "Midsole Wedge Top",
+          "componentSpecification": "Hot Press EVA Asker \"C\" 45-50",
+          "color": "Grey 2c",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "22",
+          "componentType": "Midsole Wedge Bottom",
+          "componentSpecification": "Hot Press EVA Asker \"C\" 55-60",
+          "color": "White",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "23",
+          "componentType": "Outsole",
+          "componentSpecification": "#1-44 NBS400 Shore \"A\" 65 +-or-3 SG 1.1 +1.4",
+          "color": "Black",
+          "ref": "",
+          "supplier": "CW Pressing",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Insole Strobal",
+          "componentSpecification": "Texon T28",
+          "color": "White",
+          "ref": "",
+          "supplier": "Texon",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Footbed",
+          "componentSpecification": "Cold Pressed EVA Asker \"C\" 45 Standard Open Mold",
+          "color": "Black",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Footbed Skin",
+          "componentSpecification": "SAMPLE MESH+4MMKF329+24GT/C",
+          "color": "White",
+          "ref": "",
+          "supplier": "Cosmo HK",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Foobed Logo",
+          "componentSpecification": "Screen Print Logo \"Text\" 45mm x 25MM",
+          "color": "Black / Red",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "no": "",
+          "componentType": "Cement",
+          "componentSpecification": "Water based PU",
+          "color": "Clear",
+          "ref": "",
+          "supplier": "Nom-Pu",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "name": "packagingComponents",
+      "type": "grid",
+      "columns": [
+        "componentType",
+        "componentSpecification",
+        "color",
+        "ref",
+        "supplier",
+        "notes"
+      ],
+      "rows": [
+        {
+          "componentType": "Inner Box",
+          "componentSpecification": "2016 Box art E-Flue - White Back PVC skin",
+          "color": "Red",
+          "ref": "",
+          "supplier": "Lai-Wah",
+          "notes": ""
+        },
+        {
+          "componentType": "Out Carton",
+          "componentSpecification": "Brown",
+          "color": "Brown",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "componentType": "Tongue label",
+          "componentSpecification": "3cm x 3cm White + Black Screen + Weld",
+          "color": "Black",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "componentType": "EEC label",
+          "componentSpecification": "2cm x 2cm White + Black Print",
+          "color": "Black / White",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "componentType": "Hang Tag",
+          "componentSpecification": "4-Color Print",
+          "color": "Color",
+          "ref": "",
+          "supplier": "Lai-Wah",
+          "notes": ""
+        },
+        {
+          "componentType": "Tag pin",
+          "componentSpecification": "White",
+          "color": "White",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "componentType": "Poly bag",
+          "componentSpecification": "Clear",
+          "color": "Clear",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "componentType": "Wrap Tissue",
+          "componentSpecification": "10 gram 2 sheets",
+          "color": "White",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        },
+        {
+          "componentType": "Toe Tissue",
+          "componentSpecification": "10 gram 2 sheets",
+          "color": "White",
+          "ref": "",
+          "supplier": "Local",
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}
