@@ -40,7 +40,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </div>
               <div className="space-y-1">
                 <h1 className="vf-display text-2xl font-semibold text-black sm:text-4xl">
-                  Pre-Costing Assistant
+                  Precosting Assistant
                 </h1>
                 {sectionTitle ? (
                   <p className="text-sm text-black/60 sm:text-base">

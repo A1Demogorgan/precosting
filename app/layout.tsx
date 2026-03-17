@@ -3,7 +3,7 @@ import "./globals.css";
 import { AppShell } from "@/components/app-shell";
 
 export const metadata: Metadata = {
-  title: "TF Corp Pre-Costing Assistant",
+  title: "TF Corp Precosting Assistant",
   description: "Design selector, spec browser, and pre-cost estimator for footwear concepts.",
 };
 
