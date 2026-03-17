@@ -5,10 +5,13 @@ import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 type ReportRecommendationRow = {
+  component: string;
+  costHead: string;
   recommendation: string;
   oldValue: string;
   newValue: string;
   change: string;
+  shapeContext: string;
   rationale: string;
 };
 
@@ -266,23 +269,36 @@ export function CostReport() {
           {activeTab === "recommendations" ? (
             <div className="overflow-hidden rounded-[18px] border border-black/8">
               <table className="data-table w-full text-sm">
+                <colgroup>
+                  <col className="w-[18%]" />
+                  <col className="w-[10%]" />
+                  <col className="w-[34%]" />
+                  <col className="w-[18%]" />
+                  <col className="w-[7%]" />
+                  <col className="w-[7%]" />
+                  <col className="w-[10%]" />
+                </colgroup>
                 <thead>
                   <tr>
+                    <th>Component</th>
+                    <th>Cost Head</th>
                     <th>Recommendation</th>
+                    <th>Shape Context</th>
                     <th>Old Value</th>
                     <th>New Value</th>
                     <th>Change</th>
-                    <th>Rationale</th>
                   </tr>
                 </thead>
                 <tbody>
                   {report.recommendations.map((row) => (
                     <tr key={`${row.recommendation}-${row.oldValue}-${row.newValue}`}>
+                      <td className="font-semibold">{row.component}</td>
+                      <td>{row.costHead}</td>
                       <td className="font-semibold">{row.recommendation}</td>
+                      <td>{row.shapeContext || "-"}</td>
                       <td>{row.oldValue}</td>
                       <td>{row.newValue}</td>
                       <td>{row.change}</td>
-                      <td>{row.rationale}</td>
                     </tr>
                   ))}
                 </tbody>

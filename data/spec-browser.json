@@ -118,6 +118,33 @@
       "supplier": "Nan-Ya"
     },
     {
+      "number": 14,
+      "group": "UPPER",
+      "componentType": "Collar Underlay",
+      "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+      "color": "White",
+      "ref": "",
+      "supplier": "Cosmo HK"
+    },
+    {
+      "number": 15,
+      "group": "UPPER",
+      "componentType": "Vamp Lining",
+      "componentSpecification": "Cambrelle",
+      "color": "Black",
+      "ref": "",
+      "supplier": "Local"
+    },
+    {
+      "number": 16,
+      "group": "INTERNAL",
+      "componentType": "Inner sole logo",
+      "componentSpecification": "Screen Print Logo \"Text\" 45mm x 25MM",
+      "color": "Red / Black",
+      "ref": "",
+      "supplier": "Local"
+    },
+    {
       "number": 20,
       "group": "OUTSOLE UNIT",
       "componentType": "Heel Counter",
@@ -152,6 +179,24 @@
       "color": "Black",
       "ref": "",
       "supplier": "CW Pressing"
+    },
+    {
+      "number": 24,
+      "group": "BOTTOM VIEW",
+      "componentType": "Midsole Carrier",
+      "componentSpecification": "Compression-molded EVA midsole carrier visible from the outsole view",
+      "color": "Off-White",
+      "ref": "",
+      "supplier": "Local"
+    },
+    {
+      "number": 25,
+      "group": "BOTTOM VIEW",
+      "componentType": "Midfoot Rubber Insert",
+      "componentSpecification": "Textured rubber traction insert set into the center outsole for grip and wear resistance",
+      "color": "Black",
+      "ref": "",
+      "supplier": "CW Pressing"
     }
   ],
   "images": [
@@ -170,7 +215,7 @@
         { "number": 7, "top": "39.62%", "left": "41.25%" },
         { "number": 8, "top": "36.81%", "left": "60.06%" },
         {
-          "number": 11,
+          "number": 14,
           "top": "46.92%",
           "left": "40.94%",
           "componentType": "Collar Underlay",
@@ -229,7 +274,7 @@
           "color": "Yellow"
         },
         {
-          "number": 5,
+          "number": 15,
           "top": "72.49%",
           "left": "52.95%",
           "componentType": "Vamp Lining",
@@ -269,7 +314,7 @@
           "color": "Yellow"
         },
         {
-          "number": 11,
+          "number": 16,
           "top": "19.67%",
           "left": "47.10%",
           "componentType": "Inner sole logo",
@@ -284,7 +329,7 @@
       "label": "Bottom View",
       "hotspots": [
         {
-          "number": 1,
+          "number": 24,
           "top": "53%",
           "left": "37%",
           "group": "BOTTOM VIEW",
@@ -293,7 +338,7 @@
           "color": "Off-White"
         },
         {
-          "number": 2,
+          "number": 25,
           "top": "49%",
           "left": "50%",
           "group": "BOTTOM VIEW",
@@ -302,7 +347,7 @@
           "color": "Black"
         },
         {
-          "number": 3,
+          "number": 23,
           "top": "50%",
           "left": "60%",
           "group": "BOTTOM VIEW",

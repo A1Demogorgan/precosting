@@ -1,5 +1,5 @@
-import { CostReport } from "@/components/cost-report";
+import { CostReportClient } from "@/components/cost-report-client";
 
 export default function CostReportPage() {
-  return <CostReport />;
+  return <CostReportClient />;
 }

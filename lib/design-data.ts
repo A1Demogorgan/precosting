@@ -1,5 +1,6 @@
 import designData from "@/data/design.json";
 import specBrowserData from "@/data/spec-browser.json";
+import componentShapeMetadataData from "@/data/component-shape-metadata.json";
 
 type TableRow = Record<string, string>;
 
@@ -56,9 +57,118 @@ type SpecBrowserImage = {
   hotspots: SpecBrowserHotspot[];
 };
 
+type ShapeMetadataComponent = {
+  componentNumber: number;
+  componentType: string;
+  group: string;
+  componentSpecification: string;
+  shapeFamily: string;
+  sizeClass: string;
+  symmetry: string;
+  dimensionalIntent: {
+    relativeLength: string;
+    relativeWidth: string;
+    relativeThickness: string;
+  };
+  viewMetadata: Record<
+    string,
+    | {
+        visible: boolean | string;
+        anchorPct?: { x: number; y: number };
+        estimatedFootprintPct?: { width: number; height: number };
+        shapeNotes?: string;
+      }
+    | undefined
+  >;
+  confidence: string;
+};
+
 export const shoeViews = specBrowserData.images as SpecBrowserImage[];
 export const specBrowserComponents =
   specBrowserData.components as SpecBrowserComponent[];
+const componentShapeMetadata =
+  componentShapeMetadataData.components as ShapeMetadataComponent[];
+
+function normalizeComponentName(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/[–—-]/g, " ")
+    .replace(/[&/]/g, " ")
+    .replace(/[^a-z0-9\s]/g, "")
+    .replace(/\btop layer\b/g, "top")
+    .replace(/\bbottom layer\b/g, "bottom")
+    .replace(/\b(lateral|medial)\b/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const costComponentAliases: Record<string, string[]> = {
+  "toe overlay mudguard": ["toe top mudguard"],
+  "quarter panel": ["quarter", "quarter eyerow"],
+  "eyestay lace stay": ["eyerow", "quarter eyerow"],
+  "tongue top": ["tongue"],
+  "tongue lining": ["tongue lining"],
+  "collar lining": ["heel lining", "collar panel"],
+  "foam padding tongue collar": ["tongue foam"],
+  "laces": ["shoe lace"],
+  "eyelets top eyelet": ["lace eyelet"],
+  "heel logo branding patch": ["heel logo"],
+  "midsole wedge top": ["midsole wedge top"],
+  "midsole wedge top layer": ["midsole wedge top"],
+  "midsole wedge bottom": ["midsole wedge bottom"],
+  "midsole wedge bottom layer": ["midsole wedge bottom"],
+  "sockliner footbed": ["footbed"],
+};
+
+export function findSpecForCostComponent(componentName: string) {
+  const normalizedCostName = normalizeComponentName(componentName);
+  const candidates = [normalizedCostName, ...(costComponentAliases[normalizedCostName] ?? [])];
+
+  return (
+    specBrowserComponents.find((component) => {
+      const normalizedSpecName = normalizeComponentName(component.componentType);
+      return candidates.some(
+        (candidate) =>
+          normalizedSpecName === candidate ||
+          normalizedSpecName.includes(candidate) ||
+          candidate.includes(normalizedSpecName),
+      );
+    }) ?? null
+  );
+}
+
+export function getShapeMetadataByComponentNumber(componentNumber: number) {
+  return (
+    componentShapeMetadata.find((component) => component.componentNumber === componentNumber) ?? null
+  );
+}
+
+export function findShapeMetadataForCostComponent(componentName: string) {
+  const spec = findSpecForCostComponent(componentName);
+
+  if (spec) {
+    const byNumber = getShapeMetadataByComponentNumber(spec.number);
+
+    if (byNumber) {
+      return byNumber;
+    }
+  }
+
+  const normalizedCostName = normalizeComponentName(componentName);
+  const candidates = [normalizedCostName, ...(costComponentAliases[normalizedCostName] ?? [])];
+
+  return (
+    componentShapeMetadata.find((component) => {
+      const normalizedShapeName = normalizeComponentName(component.componentType);
+      return candidates.some(
+        (candidate) =>
+          normalizedShapeName === candidate ||
+          normalizedShapeName.includes(candidate) ||
+          candidate.includes(normalizedShapeName),
+      );
+    }) ?? null
+  );
+}
 
 export function getDesignDetails() {
   const table = tables.find((entry) => entry.name === "designDetails");

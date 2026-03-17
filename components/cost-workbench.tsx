@@ -22,10 +22,13 @@ type AgentTile = {
 };
 
 type ReportRecommendationRow = {
+  component: string;
+  costHead: string;
   recommendation: string;
   oldValue: string;
   newValue: string;
   change: string;
+  shapeContext: string;
   rationale: string;
 };
 
@@ -176,10 +179,18 @@ function applyRecommendationChanges(rows: string[][], headers: string[], changes
 
 function buildRecommendationRows(changes: RecommendationChange[]): ReportRecommendationRow[] {
   return changes.map((change) => ({
-    recommendation: `${change.component} - ${change.column}`,
+    component: change.component,
+    costHead: change.column,
+    recommendation:
+      change.proposedSpecification?.trim() ||
+      change.recommendation?.trim() ||
+      `${change.component} - ${change.column}`,
     oldValue: change.currentValue.toFixed(2),
     newValue: change.recommendedValue.toFixed(2),
     change: formatSignedValue(change.recommendedValue - change.currentValue),
+    shapeContext: change.shapeContext
+      ? `${change.shapeContext.shapeFamily} · ${change.shapeContext.sizeClass} · ${change.shapeContext.dimensionalIntent.relativeLength}/${change.shapeContext.dimensionalIntent.relativeWidth}`
+      : "",
     rationale: change.rationale,
   }));
 }
@@ -201,6 +212,13 @@ function normalizeRecommendationPayload(agentId: AgentId, payload: Recommendatio
         ? recommendation
         : `${config.name}: ${recommendation}`,
     ),
+    changes: payload.changes.map((change) => ({
+      ...change,
+      recommendation:
+        change.recommendation?.trim() ||
+        change.proposedSpecification?.trim() ||
+        config.changeRecommendationTemplate(change.component),
+    })),
   };
 }
 
@@ -337,6 +355,32 @@ function AgentIcon({ type }: { type: string }) {
         </svg>
       );
   }
+}
+
+function formatViewLabel(viewId: string) {
+  if (viewId === "quarter") {
+    return "Lateral";
+  }
+
+  return viewId.charAt(0).toUpperCase() + viewId.slice(1);
+}
+
+function getDisplayProposedSpec(agentId: AgentId, change: RecommendationChange) {
+  return (
+    change.proposedSpecification?.trim() ||
+    change.recommendation?.trim() ||
+    (change.currentSpecification
+      ? `${agentConfigs[agentId].changeRecommendationTemplate(change.component)} Current spec: ${change.currentSpecification}.`
+      : agentConfigs[agentId].changeRecommendationTemplate(change.component))
+  );
+}
+
+function getDisplayShapeContext(change: RecommendationChange) {
+  if (change.shapeContext) {
+    return change.shapeContext;
+  }
+
+  return null;
 }
 
 type Props = {
@@ -688,7 +732,7 @@ export function CostWorkbench({ data }: Props) {
           onClick={() => setActiveRecommendation(null)}
         >
           <div
-            className="w-full max-w-3xl rounded-[24px] border border-black/10 bg-white p-6 shadow-2xl"
+            className="max-h-[88vh] w-full max-w-3xl overflow-y-auto rounded-[24px] border border-black/10 bg-white p-6 shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4">
@@ -729,16 +773,74 @@ export function CostWorkbench({ data }: Props) {
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               {activeRecommendation.changes.map((change) => (
                 <div key={`${change.component}-${change.column}`} className="rounded-[18px] border border-red-200 bg-red-50 p-4">
+                  {(() => {
+                    const displayProposedSpec = getDisplayProposedSpec(activeRecommendation.agentId, change);
+                    const displayShapeContext = getDisplayShapeContext(change);
+
+                    return (
+                      <>
                   <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-red-500">
                     {agentConfigs[activeRecommendation.agentId].name}
                   </p>
                   <h4 className="mt-2 text-sm font-semibold text-black">{change.component}</h4>
                   <p className="mt-1 text-sm text-black/60">{change.column}</p>
+                  <div className="mt-3 rounded-[14px] bg-white/80 p-3 text-xs text-black/70">
+                      <p className="font-semibold uppercase tracking-[0.08em] text-black/45">Proposed Spec</p>
+                      <p className="mt-2 text-sm font-medium text-black">{displayProposedSpec}</p>
+                    </div>
                   <div className="mt-3 flex items-center gap-2 text-sm">
                     <span className="rounded-full bg-white px-2 py-1 text-black/60">{change.currentValue.toFixed(2)}</span>
                     <span className="text-black/35">{"->"}</span>
                     <span className="rounded-full bg-black px-2 py-1 text-white">{change.recommendedValue.toFixed(2)}</span>
                   </div>
+                  <details className="mt-3 rounded-[14px] bg-white/70 p-3 text-xs text-black/70">
+                    <summary className="cursor-pointer font-semibold text-black">Specification Details</summary>
+                    <div className="mt-2 space-y-2">
+                      <p>
+                        <span className="font-semibold text-black">Current spec:</span>{" "}
+                        {change.currentSpecification || "Not available"}
+                      </p>
+                      <p>
+                        <span className="font-semibold text-black">Proposed spec:</span> {displayProposedSpec}
+                      </p>
+                    </div>
+                  </details>
+                  <details className="mt-3 rounded-[14px] bg-white/70 p-3 text-xs text-black/70">
+                    <summary className="cursor-pointer font-semibold text-black">Shape Context</summary>
+                    <div className="mt-2 space-y-2">
+                      {displayShapeContext ? (
+                        <>
+                          <p>
+                            <span className="font-semibold text-black">Shape:</span> {displayShapeContext.shapeFamily}
+                          </p>
+                          <p>
+                            <span className="font-semibold text-black">Size:</span> {displayShapeContext.sizeClass}
+                          </p>
+                          <p>
+                            <span className="font-semibold text-black">Geometry:</span>{" "}
+                            {displayShapeContext.dimensionalIntent.relativeLength}/
+                            {displayShapeContext.dimensionalIntent.relativeWidth}/
+                            {displayShapeContext.dimensionalIntent.relativeThickness}
+                          </p>
+                          <p>
+                            <span className="font-semibold text-black">Views:</span>{" "}
+                            {displayShapeContext.visibleViews
+                              .map((view) =>
+                                view.estimatedFootprintPct
+                                  ? `${formatViewLabel(view.viewId)} ${view.estimatedFootprintPct.width}x${view.estimatedFootprintPct.height}%`
+                                  : formatViewLabel(view.viewId),
+                              )
+                              .join(", ")}
+                          </p>
+                        </>
+                      ) : (
+                        <p>Not available</p>
+                      )}
+                    </div>
+                  </details>
+                      </>
+                    );
+                  })()}
                 </div>
               ))}
             </div>

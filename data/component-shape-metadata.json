@@ -1,0 +1,612 @@
+{
+  "schemaVersion": "1.0.0",
+  "notes": [
+    "This metadata is a view-based shape and size approximation derived from the rendered shoe images, existing hotspot positions, and current spec-browser component definitions.",
+    "All dimensions are relative to the visible shoe silhouette in each view, not physical millimeter values.",
+    "Use this as UI and pre-costing reference metadata, not as pattern-engineering or tooling-grade geometry."
+  ],
+  "imageFrame": {
+    "width": 1920,
+    "height": 1080,
+    "views": [
+      { "id": "quarter", "label": "Quarter View", "src": "/1.png" },
+      { "id": "rear", "label": "Rear View", "src": "/3.png" },
+      { "id": "top", "label": "Top View", "src": "/4.png" },
+      { "id": "bottom", "label": "Bottom View", "src": "/5.png" }
+    ]
+  },
+  "components": [
+    {
+      "componentNumber": 1,
+      "componentType": "Toe Top / Mudguard",
+      "group": "UPPER",
+      "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+      "shapeFamily": "wraparound toe cap",
+      "sizeClass": "medium",
+      "symmetry": "centered bilateral",
+      "dimensionalIntent": {
+        "relativeLength": "short-to-medium",
+        "relativeWidth": "wide",
+        "relativeThickness": "thin overlay"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 62.75, "y": 62.66 },
+          "estimatedFootprintPct": { "width": 24, "height": 13 },
+          "shapeNotes": "Tapered crescent overlay wrapping the toe spring."
+        },
+        "top": {
+          "visible": true,
+          "anchorPct": { "x": 48.21, "y": 82.33 },
+          "estimatedFootprintPct": { "width": 34, "height": 16 },
+          "shapeNotes": "Rounded U-shaped cap framing the forefoot opening."
+        },
+        "rear": { "visible": false },
+        "bottom": { "visible": false }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 2,
+      "componentType": "Vamp",
+      "group": "UPPER",
+      "componentSpecification": "MESH + 4MMKF329+24GT/C",
+      "shapeFamily": "forefoot underlay panel",
+      "sizeClass": "large",
+      "symmetry": "centered bilateral",
+      "dimensionalIntent": {
+        "relativeLength": "medium",
+        "relativeWidth": "medium-wide",
+        "relativeThickness": "thin textile"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 74.6, "y": 51.42 },
+          "estimatedFootprintPct": { "width": 29, "height": 20 },
+          "shapeNotes": "Long teardrop field running from eyestay toward the toe."
+        },
+        "top": {
+          "visible": true,
+          "anchorPct": { "x": 47.57, "y": 70.81 },
+          "estimatedFootprintPct": { "width": 24, "height": 26 },
+          "shapeNotes": "Central almond-shaped forefoot panel."
+        },
+        "rear": { "visible": false },
+        "bottom": { "visible": false }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 3,
+      "componentType": "Eyerow",
+      "group": "UPPER",
+      "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+      "shapeFamily": "lace stay strip",
+      "sizeClass": "medium",
+      "symmetry": "mirrored pair",
+      "dimensionalIntent": {
+        "relativeLength": "long",
+        "relativeWidth": "narrow",
+        "relativeThickness": "thin overlay"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 49.94, "y": 40.74 },
+          "estimatedFootprintPct": { "width": 16, "height": 22 },
+          "shapeNotes": "Curved vertical strip framing the lace throat."
+        },
+        "top": {
+          "visible": true,
+          "anchorPct": { "x": 53.11, "y": 48.89 },
+          "estimatedFootprintPct": { "width": 13, "height": 34 },
+          "shapeNotes": "Long tapering throat frame running down both sides of the tongue."
+        },
+        "rear": { "visible": false },
+        "bottom": { "visible": false }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 4,
+      "componentType": "Tongue",
+      "group": "UPPER",
+      "componentSpecification": "Mesh tongue with padded backing",
+      "shapeFamily": "center tongue panel",
+      "sizeClass": "medium",
+      "symmetry": "centered bilateral",
+      "dimensionalIntent": {
+        "relativeLength": "medium-long",
+        "relativeWidth": "medium",
+        "relativeThickness": "padded textile"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 43.94, "y": 19.67 },
+          "estimatedFootprintPct": { "width": 12, "height": 18 },
+          "shapeNotes": "Vertical padded tongue rising above the collar."
+        },
+        "top": {
+          "visible": true,
+          "anchorPct": { "x": 48.36, "y": 42.0 },
+          "estimatedFootprintPct": { "width": 12, "height": 26 },
+          "shapeNotes": "Rounded rectangular tongue centered beneath the lace bed."
+        },
+        "rear": { "visible": "partial", "shapeNotes": "Top edge and collar-facing padding are visible inside the opening." },
+        "bottom": { "visible": false }
+      },
+      "confidence": "medium"
+    },
+    {
+      "componentNumber": 5,
+      "componentType": "Tongue Logo",
+      "group": "UPPER",
+      "componentSpecification": "Tonal tongue patch branding",
+      "shapeFamily": "small branding patch",
+      "sizeClass": "small",
+      "symmetry": "centered bilateral",
+      "dimensionalIntent": {
+        "relativeLength": "short",
+        "relativeWidth": "narrow",
+        "relativeThickness": "thin patch"
+      },
+      "viewMetadata": {
+        "quarter": { "visible": false },
+        "top": {
+          "visible": "data-conflicted",
+          "anchorPct": { "x": 52.95, "y": 72.49 },
+          "estimatedFootprintPct": { "width": 8, "height": 8 },
+          "shapeNotes": "Top-view hotspot 5 is currently overridden as Vamp Lining in the existing spec-browser data."
+        },
+        "rear": { "visible": false },
+        "bottom": { "visible": false }
+      },
+      "dataQualityNote": "Component number 5 is defined as Tongue Logo in the main component list but is overridden to Vamp Lining in the top-view hotspot data.",
+      "confidence": "low"
+    },
+    {
+      "componentNumber": 6,
+      "componentType": "Tongue Lining",
+      "group": "UPPER",
+      "componentSpecification": "Visa Terry + 4MMKF329+24GT/C",
+      "shapeFamily": "internal lining panel",
+      "sizeClass": "medium",
+      "symmetry": "centered bilateral",
+      "dimensionalIntent": {
+        "relativeLength": "medium",
+        "relativeWidth": "medium",
+        "relativeThickness": "thin lining"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": "partial",
+          "anchorPct": { "x": 40.94, "y": 28.94 },
+          "estimatedFootprintPct": { "width": 9, "height": 10 },
+          "shapeNotes": "Only the exposed lining edge is visible above the eyestay."
+        },
+        "top": {
+          "visible": "partial",
+          "anchorPct": { "x": 48.36, "y": 18.5 },
+          "estimatedFootprintPct": { "width": 14, "height": 16 },
+          "shapeNotes": "Lining wraps the tongue underside and collar-facing opening."
+        },
+        "rear": { "visible": "partial", "shapeNotes": "Visible as the inner collar/tongue opening surface." },
+        "bottom": { "visible": false }
+      },
+      "confidence": "medium"
+    },
+    {
+      "componentNumber": 7,
+      "componentType": "Lace Eyelet",
+      "group": "UPPER",
+      "componentSpecification": "8mm Metal eyelet",
+      "shapeFamily": "small circular hardware",
+      "sizeClass": "small",
+      "symmetry": "repeated mirrored set",
+      "dimensionalIntent": {
+        "relativeLength": "short",
+        "relativeWidth": "short",
+        "relativeThickness": "hardware depth"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 41.25, "y": 39.62 },
+          "estimatedFootprintPct": { "width": 4, "height": 5 },
+          "shapeNotes": "Circular eyelet hardware repeated along the lace stay."
+        },
+        "top": {
+          "visible": true,
+          "anchorPct": { "x": 51.0, "y": 42.5 },
+          "estimatedFootprintPct": { "width": 6, "height": 18 },
+          "shapeNotes": "Visible as repeated small circular hardware points on both sides of the throat."
+        },
+        "rear": { "visible": false },
+        "bottom": { "visible": false }
+      },
+      "confidence": "medium"
+    },
+    {
+      "componentNumber": 8,
+      "componentType": "Shoe Lace",
+      "group": "UPPER",
+      "componentSpecification": "8mm Oval",
+      "shapeFamily": "woven lace path",
+      "sizeClass": "medium",
+      "symmetry": "cross-laced centered system",
+      "dimensionalIntent": {
+        "relativeLength": "long",
+        "relativeWidth": "narrow",
+        "relativeThickness": "soft cord"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 60.06, "y": 36.81 },
+          "estimatedFootprintPct": { "width": 24, "height": 12 },
+          "shapeNotes": "Crossing lace segments span the throat and sit proud of the upper."
+        },
+        "top": {
+          "visible": true,
+          "anchorPct": { "x": 48.36, "y": 51.98 },
+          "estimatedFootprintPct": { "width": 16, "height": 34 },
+          "shapeNotes": "Long zig-zag lace field down the centerline."
+        },
+        "rear": { "visible": false },
+        "bottom": { "visible": false }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 9,
+      "componentType": "Tongue Foam",
+      "group": "UPPER",
+      "componentSpecification": "20mm KFF PU foam",
+      "shapeFamily": "internal cushioning pad",
+      "sizeClass": "medium",
+      "symmetry": "centered bilateral",
+      "dimensionalIntent": {
+        "relativeLength": "medium",
+        "relativeWidth": "medium",
+        "relativeThickness": "thick foam"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": "partial",
+          "anchorPct": { "x": 35.88, "y": 29.78 },
+          "estimatedFootprintPct": { "width": 9, "height": 8 },
+          "shapeNotes": "Foam bulk is inferred from the padded tongue side profile."
+        },
+        "top": { "visible": "internal-only", "shapeNotes": "Internal tongue padding defines thickness but is not fully separable visually." },
+        "rear": { "visible": false },
+        "bottom": { "visible": false }
+      },
+      "confidence": "low"
+    },
+    {
+      "componentNumber": 10,
+      "componentType": "Quarter",
+      "group": "UPPER",
+      "componentSpecification": "MESH + 4MMKF329+24GT/C",
+      "shapeFamily": "large side quarter panel",
+      "sizeClass": "large",
+      "symmetry": "mirrored pair",
+      "dimensionalIntent": {
+        "relativeLength": "long",
+        "relativeWidth": "medium-high",
+        "relativeThickness": "thin textile"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 46.94, "y": 56.2 },
+          "estimatedFootprintPct": { "width": 31, "height": 28 },
+          "shapeNotes": "Large flowing sidewall panel between overlay frames."
+        },
+        "top": {
+          "visible": true,
+          "anchorPct": { "x": 41.09, "y": 48.89 },
+          "estimatedFootprintPct": { "width": 16, "height": 34 },
+          "shapeNotes": "Long side panels flanking the throat and forefoot."
+        },
+        "rear": {
+          "visible": "partial",
+          "shapeNotes": "Quarter edges appear as yellow side flashes wrapping into the heel."
+        },
+        "bottom": { "visible": false }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 11,
+      "componentType": "Heel Logo",
+      "group": "UPPER",
+      "componentSpecification": "Embroidery \"text\" logo",
+      "shapeFamily": "small branding applique",
+      "sizeClass": "small",
+      "symmetry": "centered or lateral branding",
+      "dimensionalIntent": {
+        "relativeLength": "short",
+        "relativeWidth": "short",
+        "relativeThickness": "thin stitched applique"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": "data-overridden",
+          "anchorPct": { "x": 40.94, "y": 46.92 },
+          "estimatedFootprintPct": { "width": 8, "height": 6 },
+          "shapeNotes": "Quarter-view hotspot 11 is overridden as Collar Underlay in current data."
+        },
+        "rear": {
+          "visible": true,
+          "anchorPct": { "x": 48.52, "y": 37.93 },
+          "estimatedFootprintPct": { "width": 9, "height": 8 },
+          "shapeNotes": "Small centered rear logo positioned high on the heel."
+        },
+        "top": {
+          "visible": "data-overridden",
+          "anchorPct": { "x": 47.1, "y": 19.67 },
+          "estimatedFootprintPct": { "width": 10, "height": 8 },
+          "shapeNotes": "Top-view hotspot 11 is overridden as Inner sole logo in current data."
+        },
+        "bottom": { "visible": false }
+      },
+      "dataQualityNote": "Component number 11 is reused by view-specific overrides for Collar Underlay and Inner sole logo.",
+      "confidence": "low"
+    },
+    {
+      "componentNumber": 12,
+      "componentType": "Collar Panel",
+      "group": "UPPER",
+      "componentSpecification": "MESH+4MMKF329+24GT/C",
+      "shapeFamily": "collar wrap panel",
+      "sizeClass": "medium",
+      "symmetry": "mirrored pair",
+      "dimensionalIntent": {
+        "relativeLength": "medium",
+        "relativeWidth": "medium",
+        "relativeThickness": "thin textile"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 29.87, "y": 45.52 },
+          "estimatedFootprintPct": { "width": 16, "height": 16 },
+          "shapeNotes": "Curved side panel wrapping the collar opening near the heel."
+        },
+        "top": {
+          "visible": true,
+          "anchorPct": { "x": 42.99, "y": 27.26 },
+          "estimatedFootprintPct": { "width": 16, "height": 18 },
+          "shapeNotes": "Heel-side collar wings framing the opening."
+        },
+        "rear": {
+          "visible": "partial",
+          "shapeNotes": "Appears as yellow side panels peeking beneath the heel tab."
+        },
+        "bottom": { "visible": false }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 13,
+      "componentType": "Heel Counter",
+      "group": "UPPER",
+      "componentSpecification": "1.2mm PU Duratec (WR) Emboss#BS1",
+      "shapeFamily": "heel wrap reinforcement",
+      "sizeClass": "medium",
+      "symmetry": "centered wrap",
+      "dimensionalIntent": {
+        "relativeLength": "medium",
+        "relativeWidth": "wide",
+        "relativeThickness": "structured overlay"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 21.65, "y": 28.94 },
+          "estimatedFootprintPct": { "width": 18, "height": 25 },
+          "shapeNotes": "Large rear overlay wrapping from heel breast into quarter."
+        },
+        "rear": {
+          "visible": true,
+          "anchorPct": { "x": 48.36, "y": 52.54 },
+          "estimatedFootprintPct": { "width": 24, "height": 25 },
+          "shapeNotes": "Broad rear heel panel spanning most of the heel width."
+        },
+        "top": {
+          "visible": "partial",
+          "shapeNotes": "Visible as the white heel rim wrapping the back opening."
+        },
+        "bottom": { "visible": false }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 20,
+      "componentType": "Heel Counter",
+      "group": "OUTSOLE UNIT",
+      "componentSpecification": "Injection molded heel clip",
+      "shapeFamily": "rigid heel clip",
+      "sizeClass": "medium",
+      "symmetry": "centered wrap",
+      "dimensionalIntent": {
+        "relativeLength": "short-medium",
+        "relativeWidth": "wide",
+        "relativeThickness": "rigid molded shell"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 18.18, "y": 52.26 },
+          "estimatedFootprintPct": { "width": 15, "height": 18 },
+          "shapeNotes": "External molded heel clip wrapping the rear quarter and sitting on the midsole."
+        },
+        "rear": {
+          "visible": true,
+          "anchorPct": { "x": 56.11, "y": 65.19 },
+          "estimatedFootprintPct": { "width": 28, "height": 16 },
+          "shapeNotes": "Wide rigid heel clip spanning the rear base."
+        },
+        "top": { "visible": false },
+        "bottom": { "visible": false }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 21,
+      "componentType": "Midsole Wedge Top",
+      "group": "OUTSOLE UNIT",
+      "componentSpecification": "Hot Press EVA Asker \"C\" 45-50",
+      "shapeFamily": "top wedge layer",
+      "sizeClass": "large",
+      "symmetry": "full-length sole layer",
+      "dimensionalIntent": {
+        "relativeLength": "long",
+        "relativeWidth": "wide",
+        "relativeThickness": "medium foam"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 21.02, "y": 61.25 },
+          "estimatedFootprintPct": { "width": 56, "height": 11 },
+          "shapeNotes": "Upper sole layer running nearly full length above the lower wedge."
+        },
+        "rear": {
+          "visible": true,
+          "anchorPct": { "x": 42.36, "y": 70.81 },
+          "estimatedFootprintPct": { "width": 22, "height": 10 },
+          "shapeNotes": "Visible as the upper cream midsole band."
+        },
+        "top": { "visible": false },
+        "bottom": { "visible": "edge-only", "shapeNotes": "Only the edge break is implied from the outsole-side view." }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 22,
+      "componentType": "Midsole Wedge Bottom",
+      "group": "OUTSOLE UNIT",
+      "componentSpecification": "Hot Press EVA Asker \"C\" 55-60",
+      "shapeFamily": "bottom wedge layer",
+      "sizeClass": "large",
+      "symmetry": "full-length sole layer",
+      "dimensionalIntent": {
+        "relativeLength": "long",
+        "relativeWidth": "wide",
+        "relativeThickness": "medium foam"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 34.14, "y": 72.77 },
+          "estimatedFootprintPct": { "width": 58, "height": 10 },
+          "shapeNotes": "Lower wedge band with visible darker stripe running nearly full length."
+        },
+        "rear": {
+          "visible": true,
+          "anchorPct": { "x": 55.0, "y": 76.43 },
+          "estimatedFootprintPct": { "width": 24, "height": 11 },
+          "shapeNotes": "Visible as the lower grey band above the outsole."
+        },
+        "top": { "visible": false },
+        "bottom": { "visible": "edge-only", "shapeNotes": "Only the sidewall edge is indirectly visible." }
+      },
+      "confidence": "high"
+    },
+    {
+      "componentNumber": 23,
+      "componentType": "Outsole",
+      "group": "OUTSOLE UNIT",
+      "componentSpecification": "#1-44 NBS400 Shore \"A\" 65 +-or-3 SG 1.1 +1.4",
+      "shapeFamily": "full rubber lug outsole",
+      "sizeClass": "large",
+      "symmetry": "full-length sole unit",
+      "dimensionalIntent": {
+        "relativeLength": "long",
+        "relativeWidth": "wide",
+        "relativeThickness": "thick traction base"
+      },
+      "viewMetadata": {
+        "quarter": {
+          "visible": true,
+          "anchorPct": { "x": 20.86, "y": 77.52 },
+          "estimatedFootprintPct": { "width": 62, "height": 9 },
+          "shapeNotes": "Black traction base with aggressive perimeter lugs and toe bumper."
+        },
+        "rear": {
+          "visible": true,
+          "anchorPct": { "x": 43.46, "y": 79.8 },
+          "estimatedFootprintPct": { "width": 23, "height": 8 },
+          "shapeNotes": "Rear outsole lip and heel contact area."
+        },
+        "top": {
+          "visible": "edge-only",
+          "shapeNotes": "Toe bumper and sidewall rim are partially visible from above."
+        },
+        "bottom": {
+          "visible": true,
+          "shapeNotes": "Dominant visible structure in the bottom view; see bottomViewFeatures for detailed segmentation."
+        }
+      },
+      "confidence": "high"
+    }
+  ],
+  "bottomViewFeatures": [
+    {
+      "featureId": "bottom-midsole-carrier",
+      "viewNumber": 1,
+      "componentType": "Midsole Carrier",
+      "componentSpecification": "Compression-molded EVA midsole carrier visible from the outsole view",
+      "shapeFamily": "exposed carrier channel",
+      "sizeClass": "medium",
+      "viewMetadata": {
+        "bottom": {
+          "visible": true,
+          "anchorPct": { "x": 37, "y": 53 },
+          "estimatedFootprintPct": { "width": 22, "height": 26 },
+          "shapeNotes": "Sweeping cream carrier channel cutout through the heel and arch."
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "featureId": "bottom-midfoot-rubber-insert",
+      "viewNumber": 2,
+      "componentType": "Midfoot Rubber Insert",
+      "componentSpecification": "Textured rubber traction insert set into the center outsole for grip and wear resistance",
+      "shapeFamily": "rectangular traction island",
+      "sizeClass": "medium",
+      "viewMetadata": {
+        "bottom": {
+          "visible": true,
+          "anchorPct": { "x": 50, "y": 49 },
+          "estimatedFootprintPct": { "width": 17, "height": 18 },
+          "shapeNotes": "Long rectangular insert centered through the arch and midfoot."
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "featureId": "bottom-full-outsole-traction",
+      "viewNumber": 3,
+      "componentType": "Outsole",
+      "componentSpecification": "Full rubber lug outsole with molded perimeter traction and flex grooves",
+      "shapeFamily": "full outsole traction field",
+      "sizeClass": "large",
+      "viewMetadata": {
+        "bottom": {
+          "visible": true,
+          "anchorPct": { "x": 60, "y": 50 },
+          "estimatedFootprintPct": { "width": 64, "height": 35 },
+          "shapeNotes": "Full-length lug matrix with perimeter blocks, forefoot traction pods, and heel wrap."
+        }
+      },
+      "confidence": "high"
+    }
+  ]
+}
