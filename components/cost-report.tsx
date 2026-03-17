@@ -93,7 +93,7 @@ function AccordionSection({
   title,
   subtitle,
   children,
-  defaultOpen = true,
+  defaultOpen = false,
 }: {
   index: string;
   title: string;
@@ -101,12 +101,15 @@ function AccordionSection({
   children: React.ReactNode;
   defaultOpen?: boolean;
 }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
   return (
-    <details
-      open={defaultOpen}
-      className="group overflow-hidden rounded-[24px] border border-black/8 bg-white shadow-[0_16px_34px_rgba(17,17,17,0.06)]"
-    >
-      <summary className="cursor-pointer list-none bg-[linear-gradient(180deg,rgba(0,76,151,0.08),rgba(255,255,255,0.75))] px-5 py-4">
+    <div className="overflow-hidden rounded-[24px] border border-black/8 bg-white shadow-[0_16px_34px_rgba(17,17,17,0.06)]">
+      <button
+        type="button"
+        className="w-full cursor-pointer bg-[linear-gradient(180deg,rgba(0,76,151,0.08),rgba(255,255,255,0.75))] px-5 py-4 text-left"
+        onClick={() => setIsOpen((current) => !current)}
+      >
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-start gap-4">
             <div className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-[var(--accent)] text-sm font-bold tracking-[0.16em] text-white shadow-[0_12px_24px_rgba(0,76,151,0.2)]">
@@ -118,12 +121,12 @@ function AccordionSection({
             </div>
           </div>
           <span className="rounded-full border border-[var(--accent)]/15 bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
-            Open Brief
+            {isOpen ? "Close Brief" : "Open Brief"}
           </span>
         </div>
-      </summary>
-      <div className="border-t border-black/6 px-5 py-5">{children}</div>
-    </details>
+      </button>
+      {isOpen ? <div className="border-t border-black/6 px-5 py-5">{children}</div> : null}
+    </div>
   );
 }
 
@@ -512,7 +515,7 @@ export function CostReport() {
                     <div className="rounded-[18px] border border-white/18 bg-white/10 px-4 py-3 backdrop-blur">
                       <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/70">Executive View</p>
                       <p className="mt-2 text-sm font-semibold text-white">
-                        {advancedModal.payload.demandOutlook.demandSignal.toUpperCase()} demand · {formatPercent(advancedModal.payload.targetCostReductionPct)} target
+                        {advancedModal.payload.demandOutlook.demandSignal.toUpperCase()} demand · {formatPercent(advancedModal.payload.targetCostReductionPct)} modeled reduction
                       </p>
                     </div>
                   ) : null}
@@ -562,13 +565,13 @@ export function CostReport() {
                       <ExecutiveStatCard
                         label="Achievable Landed"
                         value={formatCurrency(advancedModal.payload.costReductionPlan.achievableLandedCost)}
-                        detail={`Target ${formatCurrency(advancedModal.payload.costReductionPlan.targetLandedCost)}`}
+                        detail={`Recommendation case from the current landed baseline`}
                         tone="green"
                       />
                       <ExecutiveStatCard
-                        label="Cost-Down Target"
+                        label="Modeled Reduction"
                         value={formatPercent(advancedModal.payload.targetCostReductionPct)}
-                        detail={`${advancedModal.payload.costReductionPlan.gapToTargetPct.toFixed(1)}% gap remaining`}
+                        detail={`${formatCurrency(advancedModal.payload.marginSnapshot.optimizedLandedCost)} optimized landed view`}
                         tone="blue"
                       />
                     </div>
@@ -646,7 +649,7 @@ export function CostReport() {
                 <AccordionSection
                   index="02"
                   title="Cost Reduction Plan"
-                  subtitle="A stronger 15-20% cost-down agenda, not just the base agent pass."
+                  subtitle="Recommendation-based landed cost plan built from design, sourcing, and commercial changes."
                 >
                   <div className="grid gap-3 md:grid-cols-4">
                     <div className="rounded-[18px] border border-black/8 bg-black/[0.02] p-4">
@@ -654,16 +657,23 @@ export function CostReport() {
                       <p className="mt-2 text-xl font-semibold text-black">{formatCurrency(advancedModal.payload.costReductionPlan.currentLandedCost)}</p>
                     </div>
                     <div className="rounded-[18px] border border-sky-200 bg-sky-50 p-4">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-sky-700">Target</p>
-                      <p className="mt-2 text-xl font-semibold text-black">{formatCurrency(advancedModal.payload.costReductionPlan.targetLandedCost)}</p>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-sky-700">Recommendation Case</p>
+                      <p className="mt-2 text-xl font-semibold text-black">{formatCurrency(advancedModal.payload.marginSnapshot.optimizedLandedCost)}</p>
                     </div>
                     <div className="rounded-[18px] border border-emerald-200 bg-emerald-50 p-4">
                       <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-emerald-700">Achievable</p>
                       <p className="mt-2 text-xl font-semibold text-black">{formatCurrency(advancedModal.payload.costReductionPlan.achievableLandedCost)}</p>
                     </div>
                     <div className="rounded-[18px] border border-amber-200 bg-amber-50 p-4">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-amber-700">Gap To Target</p>
-                      <p className="mt-2 text-xl font-semibold text-black">{formatPercent(advancedModal.payload.costReductionPlan.gapToTargetPct)}</p>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-amber-700">Reduction Vs Current</p>
+                      <p className="mt-2 text-xl font-semibold text-black">
+                        {formatPercent(
+                          ((advancedModal.payload.costReductionPlan.currentLandedCost -
+                            advancedModal.payload.costReductionPlan.achievableLandedCost) /
+                            advancedModal.payload.costReductionPlan.currentLandedCost) *
+                            100,
+                        )}
+                      </p>
                     </div>
                   </div>
                   <div className="mt-4 grid gap-3">
