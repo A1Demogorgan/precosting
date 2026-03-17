@@ -1,0 +1,42 @@
+[
+  {
+    "vendor": "BluePeak Components",
+    "region": "Vietnam",
+    "specialization": "engineered mesh uppers and synthetic overlays",
+    "moqPairs": 12000,
+    "leadTimeDays": 32,
+    "baseSavingsPct": 3.6,
+    "focusAreas": ["Material", "Waste"],
+    "strength": "Better nesting discipline and lighter laminated upper packages."
+  },
+  {
+    "vendor": "StrideForm Manufacturing",
+    "region": "Indonesia",
+    "specialization": "compression EVA midsoles and rubber bottoms",
+    "moqPairs": 18000,
+    "leadTimeDays": 40,
+    "baseSavingsPct": 4.4,
+    "focusAreas": ["Bought-out / Vendor", "Machine"],
+    "strength": "Shared tooling cells for molded bottom components and faster setup turns."
+  },
+  {
+    "vendor": "AeroLane Sourcing",
+    "region": "Cambodia",
+    "specialization": "laces, trims, eyelets, packaging and consolidation buying",
+    "moqPairs": 15000,
+    "leadTimeDays": 28,
+    "baseSavingsPct": 2.9,
+    "focusAreas": ["Bought-out / Vendor", "Consumables"],
+    "strength": "Bundled trim purchasing reduces piece-part quote fragmentation."
+  },
+  {
+    "vendor": "HarborGrid Logistics",
+    "region": "South China",
+    "specialization": "multi-supplier inbound consolidation and duty routing",
+    "moqPairs": 25000,
+    "leadTimeDays": 24,
+    "baseSavingsPct": 3.1,
+    "focusAreas": ["Inbound Freight", "Duty / Tariff"],
+    "strength": "Milk-run consolidation and denser carton loading reduce inbound burden."
+  }
+]

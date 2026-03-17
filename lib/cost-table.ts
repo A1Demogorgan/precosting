@@ -1,7 +1,7 @@
 import "server-only";
 
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import { getCostTableDataForDesign } from "@/lib/cost-catalog";
+import { DEFAULT_DESIGN_ID } from "@/lib/design-catalog";
 
 type CostTableData = {
   headers: string[];
@@ -10,14 +10,6 @@ type CostTableData = {
 
 export type { CostTableData };
 
-export function getCostTableData(): CostTableData {
-  const csvPath = join(process.cwd(), "whole_shoe_component_cost_table.csv");
-  const csv = readFileSync(csvPath, "utf8").trim();
-  const lines = csv.split(/\r?\n/).filter(Boolean);
-
-  const [headerLine, ...rowLines] = lines;
-  const headers = headerLine.split(",").map((value) => value.trim());
-  const rows = rowLines.map((line) => line.split(",").map((value) => value.trim()));
-
-  return { headers, rows };
+export function getCostTableData(designId = DEFAULT_DESIGN_ID): CostTableData {
+  return getCostTableDataForDesign(designId);
 }

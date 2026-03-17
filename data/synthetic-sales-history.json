@@ -1,0 +1,87 @@
+{
+  "MSK069": {
+    "archetype": "heritage jogger",
+    "marketPosition": "lifestyle crossover",
+    "priceSensitivity": "high",
+    "historicalSales": [
+      { "season": "Spring 2023", "units": 92000, "sellThroughPct": 71, "avgRetailPrice": 94 },
+      { "season": "Fall 2023", "units": 108000, "sellThroughPct": 76, "avgRetailPrice": 96 },
+      { "season": "Spring 2024", "units": 117000, "sellThroughPct": 79, "avgRetailPrice": 99 },
+      { "season": "Fall 2024", "units": 123000, "sellThroughPct": 81, "avgRetailPrice": 102 }
+    ],
+    "forecastQuarters": [
+      { "quarter": "Q1", "units": 26000 },
+      { "quarter": "Q2", "units": 34000 },
+      { "quarter": "Q3", "units": 29000 },
+      { "quarter": "Q4", "units": 36000 }
+    ]
+  },
+  "RIV112": {
+    "archetype": "core daily trainer",
+    "marketPosition": "mainstream performance",
+    "priceSensitivity": "medium",
+    "historicalSales": [
+      { "season": "Spring 2023", "units": 64000, "sellThroughPct": 68, "avgRetailPrice": 128 },
+      { "season": "Fall 2023", "units": 72000, "sellThroughPct": 72, "avgRetailPrice": 132 },
+      { "season": "Spring 2024", "units": 81000, "sellThroughPct": 74, "avgRetailPrice": 136 },
+      { "season": "Fall 2024", "units": 86000, "sellThroughPct": 77, "avgRetailPrice": 138 }
+    ],
+    "forecastQuarters": [
+      { "quarter": "Q1", "units": 17000 },
+      { "quarter": "Q2", "units": 22000 },
+      { "quarter": "Q3", "units": 20000 },
+      { "quarter": "Q4", "units": 23000 }
+    ]
+  },
+  "ARC204": {
+    "archetype": "performance runner",
+    "marketPosition": "technical halo",
+    "priceSensitivity": "low",
+    "historicalSales": [
+      { "season": "Spring 2023", "units": 28000, "sellThroughPct": 63, "avgRetailPrice": 154 },
+      { "season": "Fall 2023", "units": 31000, "sellThroughPct": 65, "avgRetailPrice": 158 },
+      { "season": "Spring 2024", "units": 34000, "sellThroughPct": 67, "avgRetailPrice": 162 },
+      { "season": "Fall 2024", "units": 36000, "sellThroughPct": 69, "avgRetailPrice": 165 }
+    ],
+    "forecastQuarters": [
+      { "quarter": "Q1", "units": 7000 },
+      { "quarter": "Q2", "units": 9200 },
+      { "quarter": "Q3", "units": 8600 },
+      { "quarter": "Q4", "units": 9800 }
+    ]
+  },
+  "NVA318": {
+    "archetype": "women's comfort runner",
+    "marketPosition": "volume growth",
+    "priceSensitivity": "medium-high",
+    "historicalSales": [
+      { "season": "Spring 2023", "units": 48000, "sellThroughPct": 70, "avgRetailPrice": 118 },
+      { "season": "Fall 2023", "units": 56000, "sellThroughPct": 74, "avgRetailPrice": 121 },
+      { "season": "Spring 2024", "units": 65000, "sellThroughPct": 78, "avgRetailPrice": 124 },
+      { "season": "Fall 2024", "units": 71000, "sellThroughPct": 80, "avgRetailPrice": 126 }
+    ],
+    "forecastQuarters": [
+      { "quarter": "Q1", "units": 15000 },
+      { "quarter": "Q2", "units": 19500 },
+      { "quarter": "Q3", "units": 17000 },
+      { "quarter": "Q4", "units": 20500 }
+    ]
+  },
+  "TRX427": {
+    "archetype": "trail runner",
+    "marketPosition": "specialty outdoor",
+    "priceSensitivity": "low-medium",
+    "historicalSales": [
+      { "season": "Spring 2023", "units": 22000, "sellThroughPct": 61, "avgRetailPrice": 149 },
+      { "season": "Fall 2023", "units": 26000, "sellThroughPct": 64, "avgRetailPrice": 152 },
+      { "season": "Spring 2024", "units": 29000, "sellThroughPct": 68, "avgRetailPrice": 156 },
+      { "season": "Fall 2024", "units": 32000, "sellThroughPct": 70, "avgRetailPrice": 159 }
+    ],
+    "forecastQuarters": [
+      { "quarter": "Q1", "units": 6200 },
+      { "quarter": "Q2", "units": 8100 },
+      { "quarter": "Q3", "units": 7800 },
+      { "quarter": "Q4", "units": 9200 }
+    ]
+  }
+}

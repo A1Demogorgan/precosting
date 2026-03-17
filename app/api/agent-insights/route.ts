@@ -5,6 +5,8 @@ import {
   type AgentScanRow,
 } from "@/lib/agent-recommendations";
 import { findShapeMetadataForCostComponent, findSpecForCostComponent } from "@/lib/design-data";
+import { createAzureCompletion, getAzureOpenAIConfig } from "@/lib/azure-openai";
+import { DEFAULT_DESIGN_ID } from "@/lib/design-catalog";
 
 function proposeAlternativeSpecification(agentId: AgentId, currentSpecification: string) {
   const spec = currentSpecification.toLowerCase();
@@ -51,40 +53,10 @@ function buildFallbackRecommendationText(
   return agentConfigs[agentId].changeRecommendationTemplate(component);
 }
 
-async function createAzureCompletion(
-  endpoint: string,
-  apiKey: string,
-  deployment: string,
-  apiVersion: string,
-  messages: Array<{ role: "system" | "user"; content: string }>,
-) {
-  const response = await fetch(
-    `${endpoint.replace(/\/$/, "")}/openai/deployments/${deployment}/chat/completions?api-version=${apiVersion}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": apiKey,
-      },
-      body: JSON.stringify({
-        messages,
-        temperature: 0.2,
-        response_format: { type: "json_object" },
-      }),
-    },
-  );
-
-  if (!response.ok) {
-    return null;
-  }
-
-  const completion = await response.json();
-  return completion.choices?.[0]?.message?.content ?? null;
-}
-
 export async function POST(request: Request) {
   const body = (await request.json()) as {
     agentId?: AgentId;
+    designId?: string;
     rows?: AgentScanRow[];
   };
 
@@ -92,6 +64,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unsupported agent payload" }, { status: 400 });
   }
 
+  const designId = body.designId ?? DEFAULT_DESIGN_ID;
   const config = agentConfigs[body.agentId];
 
   if (!config) {
@@ -99,8 +72,8 @@ export async function POST(request: Request) {
   }
 
   const enrichedRows = body.rows.map((row) => {
-    const spec = findSpecForCostComponent(row.component);
-    const shapeMetadata = findShapeMetadataForCostComponent(row.component);
+    const spec = findSpecForCostComponent(row.component, designId);
+    const shapeMetadata = findShapeMetadataForCostComponent(row.component, designId);
 
     return {
       ...row,
@@ -168,17 +141,14 @@ export async function POST(request: Request) {
     }),
   };
 
-  const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
-  const apiKey = process.env.AZURE_OPENAI_API_KEY;
-  const deployment = process.env.AZURE_OPENAI_DEPLOYMENT_NAME;
-  const apiVersion = process.env.AZURE_OPENAI_API_VERSION ?? "2024-10-21";
+  const azureConfig = getAzureOpenAIConfig();
 
-  if (!endpoint || !apiKey || !deployment) {
+  if (!azureConfig) {
     return NextResponse.json(fallbackPayload);
   }
 
   try {
-    const content = await createAzureCompletion(endpoint, apiKey, deployment, apiVersion, [
+    const content = await createAzureCompletion(azureConfig, [
       {
         role: "system",
         content:
@@ -270,7 +240,7 @@ export async function POST(request: Request) {
         .map((component) => enrichedRowMap.get(component))
         .filter(Boolean);
 
-      const repairContent = await createAzureCompletion(endpoint, apiKey, deployment, apiVersion, [
+      const repairContent = await createAzureCompletion(azureConfig, [
         {
           role: "system",
           content:

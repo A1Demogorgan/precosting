@@ -203,7 +203,7 @@
     {
       "src": "/1.png",
       "alt": "Quarter lateral view",
-      "label": "Quarter View",
+      "label": "Lateral View",
       "hotspots": [
         { "number": 1, "top": "62.66%", "left": "62.75%" },
         { "number": 2, "top": "51.42%", "left": "74.60%" },

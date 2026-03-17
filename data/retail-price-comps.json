@@ -1,0 +1,34 @@
+[
+  {
+    "brand": "Nike",
+    "model": "Pegasus 41",
+    "price": 145,
+    "sourceLabel": "Nike",
+    "sourceUrl": "https://www.nike.com/t/pegasus-41-mens-road-running-shoes-LMhfRGdO/FD2722-002",
+    "notes": "Responsive daily trainer with mesh upper and ReactX foam."
+  },
+  {
+    "brand": "ASICS",
+    "model": "NOVABLAST 5",
+    "price": 150,
+    "sourceLabel": "ASICS",
+    "sourceUrl": "https://www.asics.com/us/en-us/novablast-5/p/ANA_1012B765-002.html",
+    "notes": "Bouncy neutral trainer positioned in the core performance segment."
+  },
+  {
+    "brand": "adidas",
+    "model": "Supernova Rise 2",
+    "price": 140,
+    "sourceLabel": "adidas",
+    "sourceUrl": "https://www.adidas.com/us/supernova-rise-running-shoes/JH5200.html",
+    "notes": "Daily comfort trainer with engineered mesh upper."
+  },
+  {
+    "brand": "On",
+    "model": "Cloudsurfer 2",
+    "price": 160,
+    "sourceLabel": "On",
+    "sourceUrl": "https://www.on.com/en-us/products/cloudsurfer-2-3mf1012",
+    "notes": "Premium neutral road model with cushioned transition-focused ride."
+  }
+]

@@ -3,23 +3,26 @@
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { designOptions } from "@/lib/design-data";
+import { DEFAULT_DESIGN_ID } from "@/lib/design-catalog";
 
 export function DesignSelector() {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const fallbackDesignId = DEFAULT_DESIGN_ID;
 
   return (
-    <div className="w-full max-w-xl">
+    <div className="w-full">
       <label
         htmlFor="design-select"
-        className="mb-3 block text-sm font-medium text-black/80"
+        className="mb-3 block text-sm font-medium uppercase tracking-[0.12em] text-white/78"
       >
         Choose a Design
       </label>
       <select
         id="design-select"
         defaultValue=""
-        className="w-full appearance-none rounded-[18px] border border-black/14 bg-white bg-[position:right_1.25rem_center] bg-no-repeat px-5 py-4 pr-14 text-lg text-black/78 outline-none transition focus:border-black/28"
+        required
+        className="w-full appearance-none rounded-[22px] border border-white/70 bg-white px-5 py-4 pr-14 text-lg font-semibold text-black outline-none transition focus:border-white"
         onChange={(event) => {
           const value = event.target.value;
 
@@ -28,7 +31,7 @@ export function DesignSelector() {
           }
 
           startTransition(() => {
-            router.push(`/design-specs?design=${value}`);
+            router.push(`/design-specs?design=${fallbackDesignId}`);
           });
         }}
       >
@@ -41,7 +44,7 @@ export function DesignSelector() {
           </option>
         ))}
       </select>
-      <p className="mt-3 text-xs text-black/45">
+      <p className="mt-3 text-xs text-white/74">
         {isPending ? "Opening design specs..." : "5 sample designs available"}
       </p>
     </div>

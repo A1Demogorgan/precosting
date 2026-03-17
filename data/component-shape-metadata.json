@@ -9,7 +9,7 @@
     "width": 1920,
     "height": 1080,
     "views": [
-      { "id": "quarter", "label": "Quarter View", "src": "/1.png" },
+      { "id": "quarter", "label": "Lateral View", "src": "/1.png" },
       { "id": "rear", "label": "Rear View", "src": "/3.png" },
       { "id": "top", "label": "Top View", "src": "/4.png" },
       { "id": "bottom", "label": "Bottom View", "src": "/5.png" }

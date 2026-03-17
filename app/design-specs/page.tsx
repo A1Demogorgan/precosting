@@ -1,4 +1,5 @@
 import { SpecBrowser } from "@/components/spec-browser";
+import { DEFAULT_DESIGN_ID } from "@/lib/design-catalog";
 
 export default async function DesignSpecsPage({
   searchParams,
@@ -6,7 +7,7 @@ export default async function DesignSpecsPage({
   searchParams: Promise<{ design?: string }>;
 }) {
   const params = await searchParams;
-  const designId = params.design ?? "MSK069";
+  const designId = params.design ?? DEFAULT_DESIGN_ID;
 
-  return <SpecBrowser designId={designId} />;
+  return <SpecBrowser key={designId} designId={designId} />;
 }

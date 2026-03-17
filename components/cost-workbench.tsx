@@ -33,6 +33,9 @@ type ReportRecommendationRow = {
 };
 
 type CostReportPayload = {
+  meta: {
+    designId: string;
+  };
   headers: string[];
   currentRows: string[][];
   newRows: string[][];
@@ -54,16 +57,16 @@ type AgentExecutionResult = {
 };
 
 const agentTiles: AgentTile[] = [
-  { name: "Material & Wastage", icon: "layers", color: "bg-[#ff6b6b] text-white", id: "material" },
-  { name: "Waste", icon: "scissors", color: "bg-[#ff922b] text-white", id: "waste" },
-  { name: "Processing", icon: "flow", color: "bg-[#4dabf7] text-white", id: "processing" },
-  { name: "Labour", icon: "users", color: "bg-[#51cf66] text-white", id: "labour" },
-  { name: "Machine", icon: "gear", color: "bg-[#845ef7] text-white", id: "machine" },
-  { name: "Consumable", icon: "drop", color: "bg-[#f59f00] text-white", id: "consumable" },
-  { name: "Bought Out Vendor", icon: "box", color: "bg-[#f06595] text-white", id: "vendor" },
-  { name: "Inbound Freight", icon: "truck", color: "bg-[#22b8cf] text-white", id: "freight" },
-  { name: "Duty / Tariff", icon: "shield", color: "bg-[#fa5252] text-white", id: "duty" },
-  { name: "Quality Rejection", icon: "alert", color: "bg-[#495057] text-white", id: "quality" },
+  { name: "Material & Wastage", icon: "layers", color: "bg-[var(--accent)] text-white", id: "material" },
+  { name: "Waste", icon: "scissors", color: "bg-[var(--accent)] text-white", id: "waste" },
+  { name: "Processing", icon: "flow", color: "bg-[var(--accent)] text-white", id: "processing" },
+  { name: "Labour", icon: "users", color: "bg-[var(--accent)] text-white", id: "labour" },
+  { name: "Machine", icon: "gear", color: "bg-[var(--accent)] text-white", id: "machine" },
+  { name: "Consumable", icon: "drop", color: "bg-[var(--accent)] text-white", id: "consumable" },
+  { name: "Bought Out Vendor", icon: "box", color: "bg-[var(--accent)] text-white", id: "vendor" },
+  { name: "Inbound Freight", icon: "truck", color: "bg-[var(--accent)] text-white", id: "freight" },
+  { name: "Duty / Tariff", icon: "shield", color: "bg-[var(--accent)] text-white", id: "duty" },
+  { name: "Quality Rejection", icon: "alert", color: "bg-[var(--accent)] text-white", id: "quality" },
 ];
 
 const visibleHeaders = [
@@ -243,7 +246,11 @@ function buildAgentRows(agentId: AgentId, rows: string[][], headers: string[]) {
   });
 }
 
-async function fetchAgentRecommendation(agentId: AgentId, scanRows: AgentScanRow[]) {
+async function fetchAgentRecommendation(
+  agentId: AgentId,
+  scanRows: AgentScanRow[],
+  designId: string,
+) {
   const response = await fetch("/api/agent-insights", {
     method: "POST",
     headers: {
@@ -251,6 +258,7 @@ async function fetchAgentRecommendation(agentId: AgentId, scanRows: AgentScanRow
     },
     body: JSON.stringify({
       agentId,
+      designId,
       rows: scanRows,
     }),
   });
@@ -385,9 +393,10 @@ function getDisplayShapeContext(change: RecommendationChange) {
 
 type Props = {
   data: CostTableData;
+  designId: string;
 };
 
-export function CostWorkbench({ data }: Props) {
+export function CostWorkbench({ data, designId }: Props) {
   const router = useRouter();
   const { headers, rows } = data;
   const componentGroupIndex = headers.indexOf("Component Group");
@@ -457,7 +466,7 @@ export function CostWorkbench({ data }: Props) {
   async function executeAgent(agentId: AgentId, sourceRows: string[][]): Promise<AgentExecutionResult> {
     const scanRowsForAgent = buildAgentRows(agentId, sourceRows, headers);
     const totalBefore = computeTotalCost(sourceRows, headers);
-    const recommendation = await fetchAgentRecommendation(agentId, scanRowsForAgent);
+    const recommendation = await fetchAgentRecommendation(agentId, scanRowsForAgent, designId);
     const nextRows = applyRecommendationChanges(sourceRows, headers, recommendation.changes);
     const totalAfter = computeTotalCost(nextRows, headers);
 
@@ -518,6 +527,9 @@ export function CostWorkbench({ data }: Props) {
       const totalAfter = computeTotalCost(nextRows, headers);
       const reportId = crypto.randomUUID();
       const reportPayload: CostReportPayload = {
+        meta: {
+          designId,
+        },
         headers,
         currentRows: cloneRows(currentRows),
         newRows: cloneRows(nextRows),
