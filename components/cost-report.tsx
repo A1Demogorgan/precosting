@@ -556,7 +556,7 @@ export function CostReport() {
                       <ExecutiveStatCard
                         label="Current Landed"
                         value={formatCurrency(advancedModal.payload.marginSnapshot.currentLandedCost)}
-                        detail={`${advancedModal.payload.retailPositioning.recommendedChannelMix} mix`}
+                        detail={`${formatCurrency(advancedModal.payload.marginSnapshot.suggestedWholesalePrice)} wholesale anchor`}
                         tone="neutral"
                       />
                       <ExecutiveStatCard
