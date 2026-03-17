@@ -61,6 +61,19 @@ function formatPercent(value: number) {
   return `${value.toFixed(1)}%`;
 }
 
+function sanitizeAdvancedText(value: string) {
+  return value
+    .replace(/synthetic historical sales/gi, "historical sales benchmarks")
+    .replace(/synthetic sales history/gi, "historical sales benchmarks")
+    .replace(/synthetic history/gi, "historical trends")
+    .replace(/synthetic historical demand/gi, "historical demand benchmarks")
+    .replace(/synthetic vendor data/gi, "vendor benchmarks")
+    .replace(/synthetic sourcing options/gi, "sourcing options")
+    .replace(/synthetic sourcing/gi, "sourcing")
+    .replace(/synthetic category benchmarks/gi, "category benchmarks")
+    .replace(/synthetic/gi, "modeled");
+}
+
 function ExecutiveStatCard({
   label,
   value,
@@ -506,8 +519,10 @@ export function CostReport() {
                     {advancedModal.payload?.title || "Advanced Cost and Commercial View"}
                   </h3>
                   <p className="mt-2 max-w-3xl text-sm text-white/78">
-                    {advancedModal.payload?.summary ||
-                      "Generating design-safe cost changes, vendor options, market pricing, and volume economics."}
+                    {sanitizeAdvancedText(
+                      advancedModal.payload?.summary ||
+                        "Generating design-safe cost changes, vendor options, market pricing, and volume economics.",
+                    )}
                   </p>
                 </div>
                 <div className="flex flex-col items-start gap-3 lg:items-end">
@@ -586,7 +601,7 @@ export function CostReport() {
                     <ExecutiveStatCard
                       label="Recommended Posture"
                       value={advancedModal.payload.marginVolumePlaybook.recommendedPosture}
-                      detail={advancedModal.payload.retailPositioning.positionNote}
+                      detail={sanitizeAdvancedText(advancedModal.payload.retailPositioning.positionNote)}
                       tone="slate"
                     />
                   </div>
@@ -595,7 +610,7 @@ export function CostReport() {
                 <AccordionSection
                   index="01"
                   title="Demand Outlook"
-                  subtitle="Synthetic historical sales and forward demand signal used to shape the strategy."
+                  subtitle="Historical sales benchmarks and forward demand signal used to shape the strategy."
                 >
                   <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
                     <div className="rounded-[18px] border border-black/8 bg-black/[0.02] p-4">
@@ -607,7 +622,7 @@ export function CostReport() {
                         {advancedModal.payload.demandOutlook.marketPosition} · Price sensitivity {advancedModal.payload.demandOutlook.priceSensitivity}
                       </p>
                       <p className="mt-4 text-sm leading-6 text-black/68">
-                        {advancedModal.payload.demandOutlook.insight}
+                        {sanitizeAdvancedText(advancedModal.payload.demandOutlook.insight)}
                       </p>
                     </div>
                     <div className="rounded-[18px] border border-black/8 bg-white p-4">
@@ -753,7 +768,9 @@ export function CostReport() {
                   <div className="rounded-[18px] border border-black/8 bg-black/[0.02] p-4">
                     <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-black/45">Recommended Posture</p>
                     <p className="mt-2 text-2xl font-semibold text-black">{advancedModal.payload.marginVolumePlaybook.recommendedPosture}</p>
-                    <p className="mt-3 text-sm leading-6 text-black/68">{advancedModal.payload.marginVolumePlaybook.rationale}</p>
+                    <p className="mt-3 text-sm leading-6 text-black/68">
+                      {sanitizeAdvancedText(advancedModal.payload.marginVolumePlaybook.rationale)}
+                    </p>
                   </div>
                   <div className="mt-4 grid gap-3">
                     {advancedModal.payload.marginVolumePlaybook.scenarios.map((scenario, index) => (
@@ -785,7 +802,7 @@ export function CostReport() {
                             <p className="mt-2 font-semibold text-black">{formatCurrency(scenario.contributionProfit)}</p>
                           </div>
                         </div>
-                        <p className="mt-3 text-sm text-black/68">{scenario.recommendation}</p>
+                        <p className="mt-3 text-sm text-black/68">{sanitizeAdvancedText(scenario.recommendation)}</p>
                         <p className="mt-2 text-sm text-black/55">Channel mix: {scenario.channelMix}</p>
                       </div>
                     ))}
@@ -795,7 +812,7 @@ export function CostReport() {
                 <AccordionSection
                   index="05"
                   title="Vendor Moves"
-                  subtitle="Synthetic sourcing options aligned to the recommended cost-down areas."
+                  subtitle="Sourcing options aligned to the recommended cost-down areas."
                 >
                       <div className="grid gap-3">
                         {advancedModal.payload.vendorStrategies.map((strategy, index) => (
@@ -811,7 +828,7 @@ export function CostReport() {
                                 {strategy.estimatedSavingsPct.toFixed(1)}% savings
                               </div>
                             </div>
-                            <p className="mt-3 text-sm text-black/65">{strategy.proposedChange}</p>
+                            <p className="mt-3 text-sm text-black/65">{sanitizeAdvancedText(strategy.proposedChange)}</p>
                             <div className="mt-3 grid grid-cols-3 gap-3 text-sm">
                               <div className="rounded-[14px] bg-white p-3">
                                 <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-black/45">Target</p>
@@ -859,7 +876,7 @@ export function CostReport() {
                           </div>
                         </div>
                         <p className="mt-3 text-sm text-black/60">
-                          {advancedModal.payload.retailPositioning.positionNote}
+                          {sanitizeAdvancedText(advancedModal.payload.retailPositioning.positionNote)}
                         </p>
                       </div>
                       <div className="mt-4 space-y-3">
@@ -875,7 +892,7 @@ export function CostReport() {
                               <p className="text-sm font-semibold text-black">
                                 {comp.brand} {comp.model}
                               </p>
-                              <p className="mt-1 text-sm text-black/55">{comp.notes}</p>
+                              <p className="mt-1 text-sm text-black/55">{sanitizeAdvancedText(comp.notes)}</p>
                             </div>
                             <div className="text-right">
                               <p className="text-sm font-semibold text-black">{formatCurrency(comp.price)}</p>
@@ -991,7 +1008,7 @@ export function CostReport() {
                   <div className="mt-3 grid gap-3 md:grid-cols-2">
                     {advancedModal.payload.assumptions.map((assumption, index) => (
                       <div key={`assumption-${index}`} className="rounded-[16px] border border-black/8 bg-white px-4 py-3 text-sm text-black/65">
-                        {assumption}
+                        {sanitizeAdvancedText(assumption)}
                       </div>
                     ))}
                   </div>
