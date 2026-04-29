@@ -96,7 +96,7 @@ const headerLabels: Record<string, string> = {
   "Inbound Freight": "Freight",
   "Duty / Tariff": "Duty",
   "Quality Rejection": "Quality",
-  "Row Total": "Ex-Factory Costs",
+  "Row Total": "Total Cost",
 };
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -647,7 +647,7 @@ export function CostWorkbench({ data, designId }: Props) {
                   </div>
                   <div className="flex items-center gap-4">
                     <p className="text-xs uppercase tracking-[0.12em] text-black/45">
-                      Ex-Factory {subtotal}
+                      Total Cost {subtotal}
                     </p>
                     <span className="text-sm text-black/45">{isOpen ? "-" : "+"}</span>
                   </div>

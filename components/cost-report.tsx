@@ -170,7 +170,7 @@ const headerLabels: Record<string, string> = {
   "Inbound Freight": "Freight",
   "Duty / Tariff": "Duty",
   "Quality Rejection": "Quality",
-  "Row Total": "Ex-Factory Costs",
+  "Row Total": "Total Cost",
 };
 
 function buildTotalRow(rows: string[][], headers: string[]) {
